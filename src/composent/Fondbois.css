@@ -1,0 +1,17 @@
+body {
+    background-image: url('../img/fond_en_bois.png');
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    background-image: url('../img/fond_en_bois.png');
+    background-repeat: repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    z-index: -1;
+} 
