@@ -40,7 +40,7 @@ ___
 *Commandes à utiliser pour installer le projet sur une machine*
 
 ```
-https://github.com/bunnyhopper363/openDescent.git
+git clone https://github.com/bunnyhopper363/openDescent.git
 ```
 ___
 
