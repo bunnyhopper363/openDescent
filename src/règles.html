@@ -54,15 +54,39 @@ Il est midi, vous voyez le ciel bleu ainsi que la rue du marché à l’entrée 
 <p>C'est à ce moment que vous êtes lâchés dans le monde ouvert d'openDescent:BRAENOR... Bon chance !</p><br>
 
 <div style="text-align: center;">
-    <img src="./img/regles_map.PNG" width="800" height="400" alt="Logo">
+    <a href="./img/regles_map.PNG" target="_blank">
+    <img
+      src="./img/regles_map.PNG"
+      width="400"
+      height="200"
+      alt="Logo"
+      onmouseenter="zoomIn(this)"
+      onmouseleave="zoomOut(this)"
+    >
   </div>
-  <!--à rendre adapter au téléphone-->
+  
+
 <style>
-   
+   .zoomed-image {
+    transform: scale(1.1); /* Ajustez le facteur d'agrandissement selon vos préférences */
+    transition: transform 0.3s ease; /* Ajoute une transition en douceur pour l'effet de zoom */
+  }
+
 .rules-container {
     background-color: #f4f4f4; /* Couleur de fond de votre choix */
     padding: 20px; /* Ajoutez de la marge intérieure pour espacer le texte du bord du conteneur */
 }
 </style>
+
+<script>
+    function zoomIn(element) {
+      element.classList.add("zoomed-image"); // Ajoute la classe de zoom au survol
+    }
+  
+    function zoomOut(element) {
+      element.classList.remove("zoomed-image"); // Supprime la classe de zoom lorsque la souris quitte
+    }
+  </script>
+  
 </body>
 </html>
