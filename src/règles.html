@@ -13,10 +13,10 @@
     <script src="javascript.js"></script>
 </head>
 <body>
-<!--Header-->
+<header>
     <div id="navbar-container"></div>
-<!--Header-->
-
+  </header>
+<main>
 <div class="container rules-container">
     <div class="jumbotron">
     <h2>openDescent:BRAENOR</h2> 
@@ -53,18 +53,16 @@ Il est midi, vous voyez le ciel bleu ainsi que la rue du marché à l’entrée 
 <br>
 <p>C'est à ce moment que vous êtes lâchés dans le monde ouvert d'openDescent:BRAENOR... Bon chance !</p><br>
 
-<div style="text-align: center;">
+<div>
     <a href="./img/regles_map.PNG" target="_blank">
-    <img
-      src="./img/regles_map.PNG"
-      width="400"
-      height="200"
-      alt="Logo"
-      onmouseenter="zoomIn(this)"
-      onmouseleave="zoomOut(this)"
-    >
-  </div>
-  
+    <img src="./img/regles_map.PNG" width="340" height="190" Display="flex" alt="Logo" onmouseenter="zoomIn(this)" onmouseleave="zoomOut(this)">
+</div>
+  <br>
+</main>
+
+<footer>
+  <div id="footerContainer"></div>
+</footer>
 
 <style>
    .zoomed-image {
@@ -87,6 +85,8 @@ Il est midi, vous voyez le ciel bleu ainsi que la rue du marché à l’entrée 
       element.classList.remove("zoomed-image"); // Supprime la classe de zoom lorsque la souris quitte
     }
   </script>
-  
+    
+
+
 </body>
 </html>
