@@ -8,7 +8,6 @@
   "description": "***Dans le cadre de notre formation en Dev Web/ Web Mobile, nous nous voyons confié le projet suivant :***",
   "version": "1.0.0",
   "main": "db-config.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
