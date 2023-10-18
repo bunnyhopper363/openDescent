@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 3000; // Choisis un port pour ton serveur sinon, port 80
+const port = 3000; // Choisis un port pour ton serveur sinon, port 80 au déployment normalement
 
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
+app.post('/connexion', (req, res) => {
+  res.send('Hello World !');
 });
 
 app.listen(port, () => {
