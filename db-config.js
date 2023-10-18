@@ -1,4 +1,4 @@
-// db-config.js
+// db-config.js fichier en lien avec la BDD 
 
 const mysql = require('mysql2');
 
