@@ -10,6 +10,29 @@
     <link rel="icon" href="./img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./composent/TaverneBackground.css">
     <script src="composent.js"></script>    
+    <style>
+     /* Style du formulaire */
+#login-form {
+    background-color: #89898980;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    display: flex;
+    flex-direction: column; /* Pour empiler les éléments verticalement */
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0; /* Supprimez les marges par défaut de body */
+}
+
+/* Style du texte "Bienvenue" */
+#welcome-text {
+    color: #000000;
+    font-weight: bold;
+
+}
+    </style>
+
 </head>
 <body>
     <header>
@@ -17,9 +40,37 @@
     </header>
     <br><br>
     <main>
-       
-        <!--mise en page-->
-    
+        <!-- Formulaire de connexion au milieu de la page -->
+        <div id="login-form">
+            <h2 id="welcome-text">CRÉEZ VOTRE COMPTE</h2>
+            <h3 id="welcome-text">En 3 étapes !</h3>
+            
+            <form action="traitement.php" method="POST"> <!-- Remplacez "traitement.php" par l'URL de votre script de traitement de formulaire -->
+                <div class="form-group">
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="email">Adresse e-mail :</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="motdepasse">Mot de passe :</label>
+                    <input type="password" id="motdepasse" name="motdepasse" class="form-control" required>
+                </div>
+        
+                <button type="submit" class="btn btn-primary">S'inscrire</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="index.html" class="btn btn-secondary">Retour</a>
+            </form>
+</div>
+        
     </main>
     <footer>
         <div id="footerContainer"></div>
