@@ -23,15 +23,17 @@
     /* Style du texte "Bienvenue" */
     #welcome-text {
         color: #000000;
+        font-weight: bold;
     }
     
     /* Style des étiquettes */
-    #username-label, #password-label {
+    #team-label, #pseudo-label {
         color: #000000;
+        font-weight: bold;
     }
     
     /* Style des champs de saisie */
-    #username, #password {
+    #team, #pseudo {
         background-color: #ffffffcb;
         border: 2px solid #000000;
     }
@@ -49,7 +51,6 @@
         margin-right: 10px;
     }
 
-
     </style>
 </head>
 <body>
@@ -65,13 +66,14 @@
                     <h2 id="welcome-text">Bienvenue</h2>
                     <form>
                         <div class="mb-3">
-                            <label for="username" class="form-label" id="username-label">Équipe</label>
-                            <input type="text" class="form-control" id="username" placeholder="Entrez le nom de votre équipe">
+                            <label for="team" class="form-label" id="team-label">Équipe</label>
+                            <input type="text" class="form-control" id="team" placeholder="Entrez le nom de votre équipe">
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label" id="password-label">Pseudo</label>
-                            <input type="password" class="form-control" id="password" placeholder="Entrez votre pseudo">
+                            <label for="pseudo" class="form-label" id="pseudo-label">Pseudo</label>
+                            <input type="text" class="form-control" id="pseudo" placeholder="Entrez votre pseudo">
                         </div>
+                        <!--bouton-->
                         <button type="submit" class="btn btn-primary" id="login-button">Connexion</button>
                         <button type="button" class="btn btn-secondary" id="signup-button">S'inscrire</button>
                     </form>
@@ -82,5 +84,13 @@
     <footer>
         <div id="footerContainer"></div>
     </footer>
+    <script>
+        //href pour allez au formulaire d'inscription
+    const signupButton = document.getElementById("signup-button");
+
+    signupButton.addEventListener("click", function() {
+        window.location.href = "inscription.html";
+    });
+</script>
 </body>
 </html>
