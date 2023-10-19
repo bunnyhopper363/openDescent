@@ -31,6 +31,25 @@
         font-weight: bold;
 
             }
+
+    #pseudo-label {
+        color: #000000;
+        font-weight: bold;
+    }
+
+            
+        /*boutons*/
+            #inscription {
+        background-color: #009688;
+        color: #fff;
+        margin-right: 10px;
+    }
+
+            #retour {
+        background-color: #333;
+        color: #fff;
+        margin-right: 10px;
+    }
     </style>
 
 </head>
@@ -47,12 +66,12 @@
             
             <form action="#" method="POST"> <!-- Remplacez "#" par l'URL de votre script de traitement de formulaire -->
                 <div class="form-group">
-                    <label for="pseudo">pseudo :</label>
+                    <label id="pseudo-label" for="pseudo">pseudo :</label>
                     <input type="text" id="pseudo" name="nom" class="form-control" required>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">S'inscrire</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="index.html" class="btn btn-secondary">Retour</a>
+                <button id="inscription" type="submit" class="btn btn-primary">S'inscrire</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="index.html" class="btn btn-secondary" id="retour">Retour</a>
             </form>
 </div>
         
