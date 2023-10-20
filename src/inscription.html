@@ -21,7 +21,7 @@
         flex-direction: column; /* Pour empiler les éléments verticalement */
         justify-content: center;
         align-items: center;
-        height: 60vh;
+        height: 62vh;
         margin: 0; /* Supprimez les marges par défaut de body */
     }
 
@@ -31,13 +31,17 @@
         font-weight: bold;
 
             }
-
+/* Style des label */
     #pseudo-label {
         color: #000000;
         font-weight: bold;
     }
 
-            
+    #Cgu-label {
+        color: #000000;
+        font-weight: bold;
+     }
+
         /*boutons*/
             #inscription {
         background-color: #009688;
@@ -68,12 +72,15 @@
                 <button type="button" class="btn btn-secondary" id="perso-button">Choisir un personnage</button><br><br>
                 <button type="button" class="btn btn-secondary" id="JoinTeam-button">Rejoindre une équipe</button>
                 &nbsp; OU &nbsp;
-                <button type="button" class="btn btn-secondary" id="CreatTeam-button">Créer une équipe</button><br><br>
+                <button type="button" class="btn btn-secondary" id="CreatTeam-button">Créer une équipe</button><br>
                 <div class="form-group">
                     <label id="pseudo-label" for="pseudo">pseudo :</label>
                     <input type="text" id="pseudo" name="nom" class="form-control" required>
                 </div>
                 <br>
+                <label id="Cgu-label" for="accepterCgu">J'accepte les CGU :</label>
+                <input type="checkbox" id="accepterCgu" name="accepterCgu" required>
+                <br><br>
                 <button id="inscription" type="submit" class="btn btn-primary">S'inscrire</button>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html" class="btn btn-secondary" id="retour">Retour</a>
             </form>
