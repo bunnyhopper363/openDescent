@@ -57,21 +57,22 @@
         <div id="footerContainer"></div>
     </footer>
     <script>
-   // Gestionnaire d'événements lorsqu'on clique sur une carte de personnage
+        // Gestionnaire d'événements lorsqu'on clique sur une carte de personnage
         document.querySelectorAll(".personnage-card").forEach(function(card) {
             card.addEventListener("click", function() {
                 const personnage = this.getAttribute("data-personnage");
-                const confirmation = confirm(`Êtes-vous sûr de vouloir choisir le personnage ${personnage} ?`);
-            
+                const confirmation = confirm(`Êtes-vous sûr de vouloir choisir le personnage, ${personnage} ?`);
+    
                 if (confirmation) {
-                    // Vous pouvez stocker cette information temporairement (par exemple, dans un cookie ou en utilisant JavaScript pour la stocker temporairement)
-                    const personnageChoisi = personnage;
-                
+                    // Stockez le personnage choisi dans sessionStorage
+                    sessionStorage.setItem("personnageChoisi", personnage);
+    
                     // Redirigez l'utilisateur vers la page d'inscription
                     window.location.href = 'inscription.html';
                 }
             });
         });
     </script>
+    
 </body>
 </html>
