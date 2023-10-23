@@ -92,11 +92,18 @@
     </footer>
     <script>
         //href pour allez au formulaire d'inscription
-    const signupButton = document.getElementById("perso-button");
-
-    signupButton.addEventListener("click", function() {
-        window.location.href = "personnageschoix.html";
-    });
-</script>
+        const signupButton = document.getElementById("perso-button");
+    
+        // Vérifions si un personnage a été choisi
+        const personnageChoisi = sessionStorage.getItem("personnageChoisi");
+    
+        if (personnageChoisi) {
+            signupButton.textContent = personnageChoisi; // Affiche le nom du personnage choisi
+        }
+    
+        signupButton.addEventListener("click", function() {
+            window.location.href = "personnageschoix.html";
+        });
+    </script>
 </body>
 </html>
