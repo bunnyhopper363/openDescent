@@ -34,27 +34,44 @@
     <main>
         <div id="personnage-container" style="display: flex; flex-wrap: wrap;">
             <!-- Carte de personnage "Ombre" -->
-            <div class="personnage-card" id="personnage-ombre">
+            <div class="personnage-card" data-personnage="Ombre">
                 <img src="img/personnages/Ombre_ok.PNG" alt="Ombre" width="425px" height="345.013px">
             </div>
             <!-- Carte de personnage "Buldar_le_Rigolard" -->
-            <div class="personnage-card" id="personnage-buldar">
+            <div class="personnage-card" data-personnage="Buldar_le_Rigolard">
                 <img src="img/personnages/Buldar_le_Rigolard_ok.PNG" alt="Buldar_le_Rigolard" width="425px" height="345.013px">
             </div>
             <!-- Carte de personnage "Thorn_le_Maitre_des_Runes" -->
-            <div class="personnage-card" id="personnage-thorn">
+            <div class="personnage-card" data-personnage="Thorn_le_Maitre_des_Runes">
                 <img src="img/personnages/Thorn_le_Maitre_des_Runes_ok.PNG" alt="Thorn_le_Maitre_des_Runes" width="425px" height="345.013px">
             </div>
-             <!-- Carte de personnage "Lynda" -->
-             <div class="personnage-card" id="personnage-lynda">
+            <!-- Carte de personnage "Lynda" -->
+            <div class="personnage-card" data-personnage="Lynda">
                 <img src="img/personnages/Lynda_ok.PNG" alt="Lynda" width="425px" height="345.013px">
             </div>
-        </div>
+        </div>        
     <br>
         <a href= "./inscription.html"><button class=button btn-primary>Retour</button></a><br>
     </main>
     <footer>
         <div id="footerContainer"></div>
     </footer>
+    <script>
+   // Gestionnaire d'événements lorsqu'on clique sur une carte de personnage
+        document.querySelectorAll(".personnage-card").forEach(function(card) {
+            card.addEventListener("click", function() {
+                const personnage = this.getAttribute("data-personnage");
+                const confirmation = confirm(`Êtes-vous sûr de vouloir choisir le personnage ${personnage} ?`);
+            
+                if (confirmation) {
+                    // Vous pouvez stocker cette information temporairement (par exemple, dans un cookie ou en utilisant JavaScript pour la stocker temporairement)
+                    const personnageChoisi = personnage;
+                
+                    // Redirigez l'utilisateur vers la page d'inscription
+                    window.location.href = 'inscription.html';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
