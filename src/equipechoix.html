@@ -20,14 +20,15 @@
     </header>
     <br><br>
     <main>
-      <!-- section dédiée au contenue de la page-->
+        <div id="equipeListContainer">
+
+        </div>
     </main>
     <footer>
         <div id="footerContainer"></div>
     </footer>
     <script>
-        const mainContainer = document.querySelector('main');
-      
+        const equipeListContainer = document.getElementById('equipeListContainer');      
         // Fonction pour récupérer les équipes depuis le serveur
         function getTeams() {
           fetch('/equipes', { method: 'GET' })
