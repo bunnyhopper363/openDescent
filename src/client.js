@@ -19,3 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+//ceci, client.js est la partie qui vas servir à nous connecter plus tard, actuellement ça ne sert que à afficher un pop up hello world
+// temporaire pour démontrer que le bouton fonctionne !
