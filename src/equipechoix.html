@@ -26,7 +26,30 @@
         <div id="footerContainer"></div>
     </footer>
     <script>
-      //section dédiée à notre javascript
-    </script>
+        const mainContainer = document.querySelector('main');
+      
+        // Fonction pour récupérer les équipes depuis le serveur
+        function getTeams() {
+          fetch('/equipes', { method: 'GET' })
+            .then((response) => response.json())
+            .then((data) => {
+              const teamList = document.createElement('ul');
+              data.forEach((team) => {
+                const teamItem = document.createElement('li');
+                teamItem.textContent = team.nom_de_team;
+                teamList.appendChild(teamItem);
+              });
+              mainContainer.appendChild(teamList);
+            })
+            .catch((error) => {
+              console.error('Erreur lors de la récupération des équipes : ' + error);
+            });
+        }
+      
+        document.addEventListener('DOMContentLoaded', function() {
+          // Appel de la fonction pour récupérer et afficher les équipes
+          getTeams();
+        });
+      </script>      
 </body>
 </html>
