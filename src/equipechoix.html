@@ -66,43 +66,51 @@
     </header>
     <br><br>
     <main>
-        <div id="equipeListContainer">
-            <div class="team-card">
-                <h3>Nom de l'équipe</h3>
-                <p>Description de l'équipe</p>
-                <button>Sélectionner</button>
-            </div> 
-        </div>
+        <div id="equipeListContainer"></div>
         <br>
-        <a href= "./inscription.html"><button class=button btn-primary>Retour</button></a><br>
+        <a href="./inscription.html"><button class="button btn-primary">Retour</button></a><br>
     </main>
     <footer>
         <div id="footerContainer"></div>
     </footer>
     <script>
-        const equipeListContainer = document.getElementById('equipeListContainer');      
-        // Fonction pour récupérer les équipes depuis le serveur
-        function getTeams() {
-        fetch('/equipes', { method: 'GET' })
-        .then((response) => response.json())
-        .then((data) => {
-            const teamList = document.createElement('ul');
-            data.forEach((team) => {
-                const teamItem = document.createElement('li');
-                teamItem.textContent = team.nom_de_team;
-                teamList.appendChild(teamItem);
-            });
-            equipeListContainer.appendChild(teamList); // Utilisez equipeListContainer ici
-        })
-        .catch((error) => {
-            console.error('Erreur lors de la récupération des équipes : ' + error);
-        });
-    }
-      
         document.addEventListener('DOMContentLoaded', function() {
-          // Appel de la fonction pour récupérer et afficher les équipes
-          getTeams();
+            const equipeListContainer = document.getElementById('equipeListContainer');
+    
+            function getTeams() {
+                fetch('/equipe', { method: 'GET' })
+                .then((response) => response.json())
+                .then((data) => {
+                    data.forEach((team) => {
+                        const teamCard = document.createElement('div');
+                        teamCard.classList.add('team-card');
+    
+                        const teamName = document.createElement('h3');
+                        teamName.textContent = team.nom_de_team;
+    
+                        const teamDescription = document.createElement('p');
+                        teamDescription.textContent = team.description;
+    
+                        const selectButton = document.createElement('button');
+                        selectButton.textContent = 'Sélectionner';
+    
+                        teamCard.appendChild(teamName);
+                        teamCard.appendChild(teamDescription);
+                        teamCard.appendChild(selectButton);
+    
+                        equipeListContainer.appendChild(teamCard);
+                    });
+                })
+                .catch((error) => {
+                    console.error('Erreur lors de la récupération des équipes : ' + error);
+                });
+    
+            }
+    
+            // Appel de la fonction pour récupérer et afficher les équipes
+            getTeams();
         });
-      </script>      
+    </script>
+        
 </body>
 </html>
