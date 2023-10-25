@@ -1,11 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 3000; // Choisissez un port pour votre serveur
+const db = require('./db-config'); // Importez la configuration de la base de données
 
 app.use(express.json());
-
-// Importez la configuration de la base de données
-const db = require('./db-config');
 
 // Route pour gérer la sélection du personnage
 app.post('/selection-personnage', (req, res) => {
@@ -14,19 +12,18 @@ app.post('/selection-personnage', (req, res) => {
     res.send('Personnage sélectionné avec succès');
 });
 
-// Route pour gérer la récupération des équipes
+// Route pour gérer la récupération des équipes depuis la base de données
 app.get('/equipes', (req, res) => {
-    const query = 'SELECT * FROM team'; // Assurez-vous que la table s'appelle "team" dans votre base de données
+  const query = 'SELECT * FROM team';
 
-    db.query(query, (err, results) => {
-        if (err) {
-            console.error('Erreur lors de la récupération des équipes : ' + err);
-            res.status(500).json({ error: 'Erreur lors de la récupération des équipes' });
-            return;
-        }
-
-        res.json(results);
-    });
+  db.query(query, (err, results) => {
+      if (err) {
+          console.error('Erreur lors de la récupération des équipes : ' + err);
+          res.status(500).json({ error: 'Erreur lors de la récupération des équipes' });
+          return;
+      }
+      res.json(results);
+  });
 });
 
 // Route pour gérer la connexion
