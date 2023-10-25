@@ -11,7 +11,53 @@
     <link rel="stylesheet" href="./composent/Fondbois.css">
     <script src="composent.js"></script>    
     <style> 
-    /* section pour le style css de la pages*/
+        .button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #fe7000;
+                color: #fff;
+                text-decoration: none;
+                border: none;
+                border-radius: 5px;
+            }
+
+            .team-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.team-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.team-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.team-card p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.team-card button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.team-card button:hover {
+    background-color: #0056b3;
+}
+
     </style>
 </head>
 <body>
@@ -21,8 +67,14 @@
     <br><br>
     <main>
         <div id="equipeListContainer">
-
+            <div class="team-card">
+                <h3>Nom de l'équipe</h3>
+                <p>Description de l'équipe</p>
+                <button>Sélectionner</button>
+            </div> 
         </div>
+        <br>
+        <a href= "./inscription.html"><button class=button btn-primary>Retour</button></a><br>
     </main>
     <footer>
         <div id="footerContainer"></div>
