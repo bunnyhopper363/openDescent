@@ -11,18 +11,22 @@
     <link rel="stylesheet" href="./composent/Fondbois.css">
     <script src="composent.js"></script>    
     <style> 
-            /* Styles pour le bouton */
-    .button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #fe7000;
-        color: #fff;
-        text-decoration: none;
-        border: none;
-        border-radius: 5px;
-    }
     
-    /* Styles pour les cartes d'équipe */
+    .button {
+     display: inline-block;
+     padding: 10px 20px;
+     background-color: #fe7000;
+     color: #fff;
+     text-decoration: none;
+     border: none;
+     border-radius: 5px;
+     transition: background-color 0.3s;
+                }
+
+    .button:hover {
+    background-color: #ff8400;
+                }
+
     .team-card {
         border: 1px solid #000000;
         border-radius: 5px;
@@ -32,17 +36,16 @@
         background-color: #898989d0;
     }
     
-    /* Styles pour le nom de l'équipe en gras */
     .team-card h2 {
         font-weight: bold;
         color: #000000;
     }
-    
+
     .team-card p {
         font-size: 16px;
         margin: 10px 0;
     }
-    
+
     .team-card button {
         background-color: #007bff;
         color: #fff;
@@ -51,7 +54,7 @@
         border-radius: 5px;
         cursor: pointer;
     }
-    
+
     .team-card button:hover {
         background-color: #0056b3;
     }
