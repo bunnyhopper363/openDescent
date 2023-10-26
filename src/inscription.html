@@ -91,20 +91,22 @@
         <div id="footerContainer"></div>
     </footer>
     <script>
-        //href pour allez au formulaire d'inscription
+        //href pour allez au formulaire de sélection de personnages
         const charaButton = document.getElementById("perso-button");
-        //href pour allez au formulaire d'inscription
+        //href pour allez au formulaire de sélection d'équipe
         const teamButton = document.getElementById("JoinTeam-button");
-    
+
         // Vérifions si un personnage a été choisi
         const personnageChoisi = sessionStorage.getItem("personnageChoisi");
-    
+
         if (personnageChoisi) {
-            signupButton.textContent = personnageChoisi; // Affiche le nom du personnage choisi
+            // Affichez le personnage choisi sur la page d'inscription
+            const personnageLabel = document.getElementById("personnage-label");
+            personnageLabel.textContent = "Personnage choisi : " + personnageChoisi;
         }
-    
-        charaButton.addEventListener("click", function() {window.location.href = "personnageschoix.html"; });
-        teamButton.addEventListener("click", function() {window.location.href = "equipechoix.html"; });
+
+        charaButton.addEventListener("click", function() { window.location.href = "personnageschoix.html"; });
+        teamButton.addEventListener("click", function() { window.location.href = "equipechoix.html"; });
     </script>
 </body>
 </html>

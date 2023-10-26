@@ -28,8 +28,8 @@
                 }
 
     .rules-container {
-            background-color: #f4f4f4; /* Couleur de fond de votre choix */
-            padding: 20px; /* Ajoutez de la marge intérieure pour espacer le texte du bord du conteneur */
+            background-color: #f4f4f4; 
+            padding: 20px;
         }
     </style>
 </head>
@@ -63,23 +63,51 @@
     <footer>
         <div id="footerContainer"></div>
     </footer>
-    <script>
-        // Gestionnaire d'événements lorsqu'on clique sur une carte de personnage
-        document.querySelectorAll(".personnage-card").forEach(function(card) {
-            card.addEventListener("click", function() {
-                const personnage = this.getAttribute("data-personnage");
-                const confirmation = confirm(`Êtes-vous sûr de vouloir choisir le personnage, ${personnage} ?`);
     
-                if (confirmation) {
-                    // Stockez le personnage choisi dans sessionStorage
-                    sessionStorage.setItem("personnageChoisi", personnage);
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const personnageContainer = document.getElementById("personnage-container");
     
-                    // Redirigez l'utilisateur vers la page d'inscription
-                    window.location.href = 'inscription.html';
-                }
-            });
-        });
+        function getPersonnages() {
+            fetch("/personnages", { method: 'GET' })
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(personnage => {
+                        const card = document.createElement("div");
+                        card.classList.add("personnage-card");
+                        card.setAttribute("data-personnage", personnage.nom_perso);
+    
+                        const image = document.createElement("img");
+                        image.src = `img/personnages/${personnage.nom_perso}_ok.PNG`;
+                        image.alt = personnage.nom_perso;
+                        image.width = "425px";
+                        image.height = "345.013px";
+    
+                        card.appendChild(image);
+                        personnageContainer.appendChild(card);
+                    });
+    
+                    // Ajoutez un gestionnaire d'événements pour gérer le clic sur une carte de personnage
+                    document.querySelectorAll(".personnage-card").forEach(function (card) {
+                        card.addEventListener("click", function () {
+                            const personnage = this.getAttribute("data-personnage");
+                            const confirmation = confirm(`Êtes-vous sûr de vouloir choisir le personnage, ${personnage} ?`);
+    
+                            if (confirmation) {
+                                // Stockez le personnage choisi dans sessionStorage
+                                sessionStorage.setItem("personnageChoisi", personnage);
+    
+                                // Redirigez l'utilisateur vers la page d'inscription
+                                window.location.href = 'inscription.html';
+                            }
+                        });
+                    });
+                })
+                .catch(error => console.error(error));
+        }
+    
+        getPersonnages();
+    });
     </script>
-    
 </body>
 </html>
