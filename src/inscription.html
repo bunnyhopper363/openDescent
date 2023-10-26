@@ -60,7 +60,6 @@
         margin-right: 10px;
     }
     </style>
-
 </head>
 <body>
     <header>
@@ -96,23 +95,71 @@
     <footer>
         <div id="footerContainer"></div>
     </footer>
-    <script>
-        //href pour allez au formulaire de sélection de personnages
+    <!-- Structure de la modal -->
+<div id="createTeamModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Créer une équipe</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="teamName" class="form-label">Nom de l'équipe :</label>
+                        <input type="text" class="form-control" id="teamName" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-primary" id="createTeamButton">Créer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
         const charaButton = document.getElementById("perso-button");
-        //href pour allez au formulaire de sélection d'équipe
         const teamButton = document.getElementById("JoinTeam-button");
+        const createTeamButton = document.getElementById("CreatTeam-button");
+        const teamNameInput = document.getElementById("teamName");
+        const teamNameModal = new bootstrap.Modal(document.getElementById("createTeamModal"));
 
-        // Vérifions si un personnage a été choisi
+        // Vérifie si un personnage a été choisi
         const personnageChoisi = sessionStorage.getItem("personnageChoisi");
 
         if (personnageChoisi) {
-            // Affichez le personnage choisi sur la page d'inscription
             const personnageLabel = document.getElementById("personnage-label");
             personnageLabel.textContent = "Personnage choisi : " + personnageChoisi;
         }
 
-        charaButton.addEventListener("click", function() { window.location.href = "personnageschoix.html"; });
-        teamButton.addEventListener("click", function() { window.location.href = "equipechoix.html"; });
-    </script>
+        charaButton.addEventListener("click", function() {
+            window.location.href = "personnageschoix.html";
+        });
+
+        teamButton.addEventListener("click", function() {
+            window.location.href = "equipechoix.html";
+        });
+
+        // Afficher la modal de création d'équipe
+        createTeamButton.addEventListener("click", function() {
+            teamNameInput.value = ""; // Réinitialise le champ de saisie
+            teamNameModal.show();
+        });
+
+        // Gérer la création de l'équipe
+        createTeamButton.addEventListener("click", function() {
+            //ajouter ici la logique pour créer l'équipe et la sauvegarder
+            const newTeamName = teamNameInput.value;
+            if (newTeamName.trim() !== "") {
+                // Fermez la modal si le nom de l'équipe est valide.
+                teamNameModal.hide();
+            }
+        });
+    });
+</script>
+
+
 </body>
 </html>
