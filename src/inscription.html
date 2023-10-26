@@ -73,7 +73,9 @@
             <h3 id="welcome-text">En 3 étapes !</h3>
             
             <form action="#" method="POST"> <!-- Remplacez "#" par l'URL de mon script de traitement de formulaire -->
-                <button type="button" class="btn btn-secondary" id="perso-button">Choisir un personnage</button><br><br>
+                <button type="button" class="btn btn-secondary" id="perso-button">Choisir un personnage</button> &nbsp;
+                <span id="personnage-label"></span>
+                <br><br>
                 <button type="button" class="btn btn-secondary" id="JoinTeam-button">Rejoindre une équipe</button>
                 &nbsp; OU &nbsp;
                 <button type="button" class="btn btn-secondary" id="CreatTeam-button">Créer une équipe</button><br>
@@ -130,8 +132,8 @@
         const personnageChoisi = sessionStorage.getItem("personnageChoisi");
 
         if (personnageChoisi) {
-            const personnageLabel = document.getElementById("personnage-label");
-            personnageLabel.textContent = "Personnage choisi : " + personnageChoisi;
+        const personnageLabel = document.getElementById("personnage-label");
+        personnageLabel.textContent = "Personnage choisi : " + personnageChoisi;
         }
 
         charaButton.addEventListener("click", function() {
